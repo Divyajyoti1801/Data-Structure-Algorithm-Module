@@ -24,10 +24,24 @@ public class UnionOfSortedArray {
             } else if (b[j] < a[i]) {
                 System.out.print(b[j] + " ");
                 j++;
-            } else if (a[i] == b[j]) {
-                // System.out.print(a[i] + " ");
-
+            } else {
+                System.out.print(a[i] + " ");
+                i++;
+                j++;
             }
         }
+        while (i < a.length) {
+            if (i > 0 && a[i] != a[i - 1]) {
+                System.out.print(a[i] + " ");
+                i++;
+            }
+        }
+        while (j < b.length) {
+            if (j > 0 && b[j] != b[j - 1]) {
+                System.out.print(b[j] + " ");
+                j++;
+            }
+        }
+
     }
 }
