@@ -8,7 +8,7 @@ public class HoarePartition {
 
     public static int hoarePartition(int arr[], int low, int high) {
         int pivot = arr[low];
-        int i = low - 1, j = high - 1;
+        int i = low - 1, j = high + 1;
         while (true) {
             do {
                 i++;
