@@ -5,12 +5,12 @@ import java.util.Arrays;
 public class SegregationProgram {
     public static void main(String args[]) {
         int arr[] = new int[] { 15, -3, -2, 18 };
-        segragateArray(arr);
+        segregatedArray(arr);
         System.out.println(Arrays.toString(arr));
 
     }
 
-    public static void segragateArray(int arr[]) {
+    public static void segregatedArray(int arr[]) {
         int i = -1, j = arr.length;
         while (true) {
             do {
