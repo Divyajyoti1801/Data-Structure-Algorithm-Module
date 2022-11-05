@@ -1,0 +1,31 @@
+OFF-Campus Placement
+
+What to Study and Effort:-
+ 
+Language: Java (Coding Specific Language), Javascript (Production Specific Langauge)
+
+Data Structure:
+1. Arrays
+2. Strings
+3. Linked List, Circular Linked List,  Doubly Linked List, Circular Doubly Linked List
+4. Tree - Binary Tree, Binary Search Tree, AVL, RBL, ET,B-Tree
+5. Stack and Queue
+6. Map/Set/Heap
+7. Graph
+
+
+
+Algorithm:
+1. Searching and Sorting 
+2. Greedy Algorithm
+3. BackTracking  Algorithm
+4. Dynamic Programming
+5. Divide and Conqueror
+
+
+Subjective:
+1. Operating System
+2. DBMS
+3. OOPS 
+4. Computer Networks
+5. Algo/Compiler
