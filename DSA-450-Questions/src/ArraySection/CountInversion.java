@@ -9,7 +9,7 @@ public class CountInversion {
     static int mergeSort(int arr[], int l, int r) {
         int count_inv = 0;
         if (l < r) {
-            int m = (l + (r - l)) / 2;
+            int m = l + (r - l) / 2;
             count_inv += mergeSort(arr, l, m);
             count_inv += mergeSort(arr, m + 1, r);
 
@@ -19,43 +19,27 @@ public class CountInversion {
     }
 
     static int merge(int arr[], int l, int m, int r) {
-        int n1 = m - l + 1;
-        int n2 = r - m;
         int count_inv = 0;
-
-        int L[] = new int[n1];
-        int R[] = new int[n2];
-
-        for (int i = 0; i < n1; i++) {
-            L[i] = arr[l + i];
-        }
-        for (int j = 0; j < n2; j++) {
-            R[j] = arr[m + 1 + j];
-        }
-
-        // Merging process
-        int i = 0, j = 0, k = l;
-        while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
-                arr[k] = L[i];
-                i++;
-                count_inv++;
+        int[] temp = new int[r - l + 1];
+        int i = l;
+        int j = m + 1;
+        int k = 0;
+        while (i <= m && j <= r) {
+            if (arr[i] <= arr[j]) {
+                temp[k++] = arr[i++];
             } else {
-                arr[k] = R[j];
-                j++;
-                count_inv++;
+                temp[k++] = arr[j++];
+                count_inv += (m + 1 - i);
             }
-            k++;
         }
-        while (i < n1) {
-            arr[k] = arr[i];
-            i++;
-            k++;
+        while (i <= m) {
+            temp[k++] = arr[i++];
         }
-        while (j < n2) {
-            arr[k] = arr[j];
-            j++;
-            k++;
+        while (j <= r) {
+            temp[k++] = arr[j++];
+        }
+        for (int idx1 = 0, idx2 = l; idx1 < temp.length; idx1++) {
+            arr[idx2++] = temp[idx1];
         }
         return count_inv;
     }
