@@ -3,6 +3,7 @@ package ArraySection;
 public class BuyAndSellShareTwice {
     public static void main(String args[]) {
         int price[] = new int[] { 10, 22, 5, 75, 65, 80 };
+        System.out.println("The Maximum Profit we are going to get: " + buyAndSellShareTwiceEfficient(price));
     }
 
     static int buyAndSellShareTwiceSimple(int arr[]) {
