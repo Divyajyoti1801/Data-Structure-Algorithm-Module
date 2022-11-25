@@ -1,5 +1,7 @@
 package Matrix;
 
+import java.util.Stack;
+
 public class MaxRectangle {
     public static void main(String args[]) {
         int M[][] = new int[][] { { 0, 1, 1, 0 }, { 1, 1, 1, 1 }, { 1, 1, 1, 1 }, { 1, 1, 0, 0 } };
@@ -9,26 +11,33 @@ public class MaxRectangle {
     }
 
     static int maxRectangle(int M[][], int n, int m) {
-        int arr[] = new int[m];
-        int a = 0;
-        for (int i = 0; i < n; i++) {
-            int sum = 0;
+        int a[][] = new int[n][m];
+        for (int i = 0; i < m; i++) {
+            a[0][i] = M[0][i];
+        }
+        for (int i = 1; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                sum += M[i][j];
+                if (M[i][j] == 1) {
+                    a[i][j] = M[i][j] - a[i - 1][j];
+                }
             }
-            arr[a] = sum;
-            a++;
         }
-        int max_area = arr[0];
-        int area = 1;
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i - 1] == arr[i]) {
-                area = arr[i] * (i);
-            } else {
-                area = arr[i];
+        Stack<Integer> s = new Stack<>();
+        int ans = Integer.MIN_VALUE;
+        for (int i = 0; i < n; i++) {
+            int left[] = new int[m];
+            int j = 0;
+            while (j < m) {
+                while (!s.isEmpty() && a[i][s.peek()] >= a[i][j]) {
+                    s.pop();
+                }
+                if (s.isEmpty()) {
+                    left[j] = 0;
+                } else {
+                    // Not completed
+                }
             }
-            max_area = Math.max(max_area, area);
         }
-        return max_area;
+        return ans;
     }
 }
