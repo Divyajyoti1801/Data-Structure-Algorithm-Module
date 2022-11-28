@@ -1,0 +1,4 @@
+Some Important Question About JAVA String
+---------------------------------------------------------------------------------------------------------------------------------------------
+1. Why Strings are Immutable in JAVA?
+    - The strings are immutable in JAVA because of security, synchronization and concurrency, caching, and class loading. The reason of making string final is to destroy the immutability and to not allow other to extend it. The String objects are cached in the string pool,and it makes the string immutable.
