@@ -1,0 +1,27 @@
+DYNAMIC PROGRAMMING
+---------------------------------------------------------------------------------------------------------------------------------------------
+- Dynamic Programming is an optimized recursion. In this time complexity got reduced.
+- How to Identify Optimal Problem?
+    -- Go for Greedy First: Least, most, min, max, largest, smallest.
+    -- Some choice is given (multiple branches in recursion tree).
+
+- Official Definition:
+    -- Dynamic Programming is a technique in computer programming that helps to efficiently solve a class of problems that have overlapping sub-problems  and optimal substructure property.
+
+- Two Different Ways To DP
+    - Memoization (Top-Down Approach)
+        -- Recursion and then sub-problems storage
+    - Tabulation (Bottom Up)
+        -- No Recursion
+        -- Dynamic Problems through iterations.
+        -- More Efficient
+    
+- Tabulation (Bottom-Up Approach)
+    - Initialization
+        -- dp[0]=fibonacci(0)
+        -- dp[1]=fibonacci(1)
+    - Assigning Meaning
+        - Example of Fibonacci Series
+            -- Create an Array DP in which each index assigned by the meaning of calculated fibonacci
+            -- index-1: fibonacci(1), index-2: fibonacci(2), ...........,index-n: fibonacci(n)
+    - Filling must be done from small to large.
