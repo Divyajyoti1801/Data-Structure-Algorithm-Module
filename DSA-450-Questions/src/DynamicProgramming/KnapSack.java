@@ -23,6 +23,8 @@ public class KnapSack {
             Arrays.fill(d, -1);
         }
         System.out.println("KnapSack(0-1) memoization solution: " + memoizationKnapSack(val, wt, W, wt.length, dp));
+        // Dynamic Programming (Tabulation Matrix)
+        System.out.println("KnapSack(0-1) tabulation solution: " + tabulationKnapSack(val, wt, W));
 
     }
 
@@ -44,6 +46,7 @@ public class KnapSack {
         }
     }
 
+    // Memoization Code: Time Complexity:O(n*W)
     static int memoizationKnapSack(int val[], int wt[], int W, int n, int dp[][]) {
         if (W == 0 || n == 0) {
             return 0;
@@ -64,6 +67,57 @@ public class KnapSack {
             dp[n][W] = memoizationKnapSack(val, wt, W, n - 1, dp);
             return dp[n][W];
         }
+    }
+
+    // Tabulation Method:
+    static int tabulationKnapSack(int val[], int wt[], int W) {
+        // W=0 and i=0 profit=0
+        // j= knapsack size
+        // i= represent value of items
+        // i-items + j=W
+        // 1. Create Table
+        // 2. Assign Meaning to index + initialize the base case
+        // 3. fill from bottom-up small to large.
+        int n = val.length;
+        int dp2[][] = new int[n + 1][W + 1];
+        // Initialization of 0th col
+        for (int i = 0; i < dp2.length; i++) {
+            dp2[i][0] = 0;
+        }
+        // Initialization of 0th row
+        for (int j = 0; j < dp2[0].length; j++) {
+            dp2[0][j] = 0;
+        }
+
+        for (int i = 1; i < n + 1; i++) {
+            for (int j = 1; j < W + 1; j++) {
+                int v = val[i - 1]; // ith item value
+                int w = wt[i - 1]; // ith item weight
+                if (w <= j) {
+                    // Valid condition
+                    // Include profit
+                    int incProfit = v + dp2[i - 1][j - w];
+                    // Exclude profit
+                    int excProfit = dp2[i - 1][j];
+                    dp2[i][j] = Math.max(incProfit, excProfit);
+                } else {
+                    dp2[i][j] = dp2[i - 1][j];
+                }
+            }
+        }
+        printDynamicProgrammingTable(dp2);
+        return dp2[n][W];
+    }
+
+    static void printDynamicProgrammingTable(int arr[][]) {
+        System.out.println("Dynamic Programming Matrix: ");
+        for (int[] a : arr) {
+            for (int i : a) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
 
     // 0-1 Knapsack Problem: Fridge, laptop, book(The items which cannot be stored
