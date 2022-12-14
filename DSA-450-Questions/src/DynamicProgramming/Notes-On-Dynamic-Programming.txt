@@ -25,3 +25,13 @@ DYNAMIC PROGRAMMING
             -- Create an Array DP in which each index assigned by the meaning of calculated fibonacci
             -- index-1: fibonacci(1), index-2: fibonacci(2), ...........,index-n: fibonacci(n)
     - Filling must be done from small to large.
+
+- Unbounded Knapsack
+    - There are items and given there weights and values(Worth).
+    - There is knapsack and its fixed weight is given.
+    - Target is to make maximum profit.
+    - Variant 0-1 Knapsack item included and not included. Items must be distinct and no repetition.
+
+- What is a Sub-Sequence?
+    -- A subsequence of a string is a new string generated form the original string with some characters(can be none) deleted without changing the relative order of the remaining character.
+    
