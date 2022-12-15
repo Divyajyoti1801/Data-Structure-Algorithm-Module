@@ -34,4 +34,6 @@ DYNAMIC PROGRAMMING
 
 - What is a Sub-Sequence?
     -- A subsequence of a string is a new string generated form the original string with some characters(can be none) deleted without changing the relative order of the remaining character.
-    
+
+- What is a SubString?
+    -- A substring is a contiguous of characters within a string.
