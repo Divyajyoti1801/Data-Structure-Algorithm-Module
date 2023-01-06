@@ -1,0 +1,16 @@
+    Properties Of Linked List
+        -- Variable in size
+        -- Non Contiguous
+        -- Insert Time Complexity: O(1)
+        -- Searching Time Complexity: O(n)
+        -- Manipulation Framework
+    
+    Structure of Linked List:    
+    Node-1                  Node-2
+        -- Data  --------->     -- Data
+        -- Next                 -- Next
+    
+    Types Of Linked-List:
+        -- Singular Linked List 
+        -- Doubly Linked List
+        -- Circular Linked List
